@@ -44,21 +44,27 @@ class AccountRepository:
                     RETURNING id;
                     """,
                     [
-                    account.username,
-                    hashed_password,
-                    account.email,
-                    account.first_name,
-                    account.last_name
+                        account.username,
+                        hashed_password,
+                        account.email,
+                        account.first_name,
+                        account.last_name
                     ]
                 )
                 id = result.fetchone()[0]
-                return Account(id=id, username=account.username, hashed_password=hashed_password,
-                                first_name=account.first_name, last_name=account.last_name, email=account.email)
+                return Account(
+                    id=id,
+                    username=account.username,
+                    hashed_password=hashed_password,
+                    first_name=account.first_name,
+                    last_name=account.last_name,
+                    email=account.email
+                )
 
     def get(self, username: str) -> Account:
-            with pool.connection() as conn:
-                with conn.cursor() as db:
-                    result = db.execute(
+        with pool.connection() as conn:
+            with conn.cursor() as db:
+                result = db.execute(
                     """
                     SELECT
                         id, username, password, email, first_name, last_name
@@ -66,28 +72,28 @@ class AccountRepository:
                     WHERE username = %s;
                     """,
                     [username]
-                    )
-                    record = result.fetchone()
-                    if record is None:
-                        return None
-                    return Account(
-                        id=record[0],
-                        username=record[1],
-                        hashed_password=record[2],
-                        email=record[3],
-                        first_name=record[4],
-                        last_name=record[5],
-                        )
+                )
+                record = result.fetchone()
+                if record is None:
+                    return None
+                return Account(
+                    id=record[0],
+                    username=record[1],
+                    hashed_password=record[2],
+                    email=record[3],
+                    first_name=record[4],
+                    last_name=record[5],
+                )
 
     def get_all(self):
         with pool.connection() as conn:
             with conn.cursor() as cur:
                 pam = cur.execute(
-                """
-                SELECT
-                    username, password, email, first_name, last_name
-                FROM accounts
-                """,
+                    """
+                    SELECT
+                        username, password, email, first_name, last_name
+                    FROM accounts
+                    """,
                 )
                 results = []
                 for row in pam.fetchall():
