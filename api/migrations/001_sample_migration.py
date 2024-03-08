@@ -1,6 +1,6 @@
 steps = [
     [
-        # "Up" SQL statement
+        # "Up" SQL statement for creating the accounts table
         """
         CREATE TABLE accounts (
             id SERIAL PRIMARY KEY NOT NULL,
@@ -11,7 +11,7 @@ steps = [
             email VARCHAR(50) NOT NULL
         );
         """,
-        # "Down" SQL statement
+        # "Down" SQL statement for dropping the accounts table
         """
         DROP TABLE accounts;
         """
