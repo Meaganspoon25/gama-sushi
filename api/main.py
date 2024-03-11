@@ -3,11 +3,19 @@ from fastapi.middleware.cors import CORSMiddleware
 import os
 from authenticator import authenticator
 from routers import accounts, giftcards
+from routers import accounts, gallery, careers
+from routers import accounts, reviews
+from routers import accounts, cart
+
 
 app = FastAPI()
 app.include_router(giftcards.router)
 app.include_router(accounts.router)
 app.include_router(authenticator.router)
+app.include_router(gallery.router)
+app.include_router(careers.router)
+app.include_router(reviews.router)
+app.include_router(cart.router)
 
 
 app.add_middleware(
