@@ -1,0 +1,36 @@
+/* Style for the hours component */
+.hours {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+/* Style for the hours component title */
+.hours h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Style for the hours list */
+.hours ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Style for each hours list item */
+.hours li {
+    margin-bottom: 5px;
+}
+
+/* Style for day names */
+.hours li strong {
+    font-weight: bold;
+    color: #007bff; /* Blue color for day names */
+}
+
+/* Additional styling for closed days */
+.hours li.closed {
+    color: #dc3545; /* Red color for closed days */
+}

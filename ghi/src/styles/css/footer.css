@@ -1,0 +1,44 @@
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+    color: #333;
+    text-align: center;
+    padding: 5px 0;
+    border-top: 1px solid #ccc;
+}
+
+.logo {
+    height: 90px;
+    vertical-align: middle;
+    margin-right: 18px;
+    margin-left: 50px;
+}
+
+
+.instagram-logo {
+    height: 50px;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+
+/* Style for the button-shaped links */
+.button-link {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Change button color on hover */
+.button-link:hover {
+    background-color: #007bff; /* Blue color */
+}
