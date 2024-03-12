@@ -2,13 +2,13 @@ from pydantic import BaseModel, EmailStr
 from queries.pool import pool
 
 
-
 class CareersFormIn(BaseModel):
     first_name: str
     last_name: str
     email: EmailStr
     phone_number: int
     resume: str
+
 
 class CareersFormOut(BaseModel):
     id: int

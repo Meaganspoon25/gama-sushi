@@ -6,7 +6,7 @@ from authenticator import authenticator
 router = APIRouter()
 
 
-@router.post("/reviews", response_model=ReviewsOut)
+@router.post("/reviews/create", response_model=ReviewsOut)
 def create_reviews(
     review: ReviewsIn, response: Response,
     account_data: dict = Depends(authenticator.get_current_account_data),
