@@ -6,7 +6,7 @@ from routers import accounts, giftcards
 from routers import accounts, gallery, careers
 from routers import accounts, reviews
 from routers import accounts, cart
-
+from routers import newsletter
 
 app = FastAPI()
 app.include_router(giftcards.router)
@@ -16,6 +16,7 @@ app.include_router(gallery.router)
 app.include_router(careers.router)
 app.include_router(reviews.router)
 app.include_router(cart.router)
+app.include_router(newsletter.router)
 
 
 app.add_middleware(
