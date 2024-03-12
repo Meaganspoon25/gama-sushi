@@ -1,13 +1,9 @@
 from pydantic import BaseModel
-from jwtdown_fastapi.authentication import Token
-import requests
-import json
-import os
 
-# PEXELS_API_KEY = os.environ["PEXELS_API_KEY"]
 
 class DuplicatePictureError(ValueError):
     pass
+
 
 class PictureIn(BaseModel):
     image: str
@@ -15,6 +11,7 @@ class PictureIn(BaseModel):
 
 class PictureOut(BaseModel):
     image: str
+
 
 class PictureRepository:
     ...
@@ -53,17 +50,19 @@ class PictureRepository:
     #     except (KeyError, IndexError):
     #         return {"picture_url": None}
 
-
-    # def get_menu_item(query):
-    #     headers = {"Authorization": PEXELS_API_KEY}
-    #     params = {
-    #         "per_page": 1,
-    #         "query": query,
-    #     }
-    #     url = "https://api.pexels.com/v1/search"
-    #     response = requests.get(url, params=params, headers=headers)
-    #     content = json.loads(response.content)
-    #     try:
-    #         return {"menu_item": query, "picture_url": content["photos"][0]["src"]["original"]}
-    #     except (KeyError, IndexError):
-    #         return {"menu_item": query, "picture_url": None}
+# def get_menu_item(query):
+#     headers = {"Authorization": PEXELS_API_KEY}
+#     params = {
+#         "per_page": 1,
+#         "query": query,
+#     }
+#     url = "https://api.pexels.com/v1/search"
+#     response = requests.get(url, params=params, headers=headers)
+#     content = json.loads(response.content)
+#     try:
+#         return {
+#             "menu_item": query,
+#             "picture_url": content["photos"][0]["src"]["original"]
+#         }
+#     except (KeyError, IndexError):
+#         return {"menu_item": query, "picture_url": None}

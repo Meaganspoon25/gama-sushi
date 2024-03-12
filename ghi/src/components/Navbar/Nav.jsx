@@ -1,6 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import NavbarBootstrap from 'react-bootstrap/Navbar';
+import GiftcardForm from '../../components/Navbar/GiftcardForm'
 
 function CustomNavbar() {
   return (

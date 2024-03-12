@@ -10,7 +10,7 @@ class Error(BaseModel):
 class OrderIn(BaseModel):
     item_name: str
     item_quantity: int
-    item_price: float 
+    item_price: float
 
 
 class OrderOut(BaseModel):
@@ -40,7 +40,6 @@ class OrderRepository:
                         order.item_quantity,
                         order.item_price,
                         user_id,
-
                     ]
                 )
                 id = result.fetchone()[0]
@@ -65,7 +64,7 @@ class OrderRepository:
         except Exception as e:
             print(e)
             return False
-      
+
     def get_all(self) -> Union[Error, List[OrderOut]]:
         try:
             # connect the database
@@ -77,7 +76,6 @@ class OrderRepository:
                         """
                         SELECT id, item_name, item_quantity, item_price
                         FROM orders
-
                         ORDER BY item_quantity;
                         """
                     )
@@ -93,7 +91,7 @@ class OrderRepository:
                     return result
         except Exception:
             return {"message": "Could not get all Orders!!"}
-        
+
     def get_order_byuser(self, user_id: int):
         # connect the database
         with pool.connection() as conn:
@@ -107,7 +105,7 @@ class OrderRepository:
                     WHERE user_id = %s
                     """,
                     [user_id]
-                    )
+                )
                 results = []
                 for row in result.fetchall():
                     record = {}
@@ -115,6 +113,3 @@ class OrderRepository:
                         record[column.name] = row[i]
                     results.append(record)
                 return results
-
-
-
