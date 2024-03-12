@@ -3,9 +3,9 @@ from fastapi.middleware.cors import CORSMiddleware
 import os
 from authenticator import authenticator
 from routers import accounts, giftcards
-from routers import accounts, gallery, careers
-from routers import accounts, reviews
-from routers import accounts, cart
+from routers import gallery, careers
+from routers import reviews
+from routers import cart
 from routers import newsletter
 
 app = FastAPI()

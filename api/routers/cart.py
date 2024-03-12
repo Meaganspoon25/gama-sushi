@@ -55,5 +55,3 @@ def checkout_order(
     total = total_before_tip + tip_amount
     total = round(total, 2)
     return total
-
-
