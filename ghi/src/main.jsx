@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom/client'
-import { 
-    createBrowserRouter, 
+import {
+    createBrowserRouter,
     RouterProvider } from 'react-router-dom'
 import './index.css'
 import App from './App.jsx'
@@ -18,6 +18,7 @@ import PlaceAnOrder from './pages/PlaceAnOrder.jsx'
 import Gallery from './pages/Gallery.jsx'
 import CreateReview from './pages/CreateReview.jsx'
 import LogIn from './pages/LogIn.jsx'
+import SignUp from './pages/SignUp.jsx'
 
 const router = createBrowserRouter([
     {
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
                 path: 'token',
                 element: <LogIn />,
             },
+            {
+                path:'accounts',
+                element: <SignUp />,
+            }
         ],
     },
 ])
