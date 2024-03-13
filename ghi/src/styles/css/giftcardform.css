@@ -1,0 +1,58 @@
+/* Form Container */
+.custom-form {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Label */
+.custom-form label {
+    font-weight: bold;
+    color: #495057;
+}
+
+/* Input Fields */
+.custom-form input[type="text"],
+.custom-form input[type="email"],
+.custom-form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Form Text */
+.custom-form .text-muted {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+/* Submit Button */
+.custom-form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.custom-form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Error Message */
+.custom-form .error-message {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 5px;
+}

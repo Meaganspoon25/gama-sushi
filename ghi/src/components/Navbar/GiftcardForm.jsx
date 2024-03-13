@@ -1,36 +1,39 @@
-import React, { useState } from 'react'
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
+import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import '../../styles/css/giftcardform.css';
 
 function GiftcardForm({ onSubmit }) {
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [amount, setAmount] = useState('')
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [amount, setAmount] = useState('');
+
     const handleSubmit = async (e) => {
-        e.preventDefault()
+        e.preventDefault();
         try {
-            const url = 'http://localhost:8000/api/giftcards' // Endpoint for creating a gift card
+            const url = 'http://localhost:8000/api/giftcards'; // Endpoint for creating a gift card
             const response = await fetch(url, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({ name, email, amount }),
-            })
+            });
             if (response.ok) {
                 // Assuming the server responds with the created gift card data
-                const data = await response.json()
+                const data = await response.json();
                 // Handle the response data as needed
-                console.log('Gift card created:', data)
+                console.log('Gift card created:', data);
             } else {
-                console.error('Failed to create gift card:', response.status)
+                console.error('Failed to create gift card:', response.status);
             }
         } catch (error) {
-            console.error('Error creating gift card:', error)
+            console.error('Error creating gift card:', error);
         }
-    }
+    };
+
     return (
-        <Form onSubmit={handleSubmit}>
+        <Form className="custom-form" onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicName">
                 <Form.Label>Name</Form.Label>
                 <Form.Control
@@ -69,6 +72,7 @@ function GiftcardForm({ onSubmit }) {
                 Submit
             </Button>
         </Form>
-    )
+    );
 }
-export default GiftcardForm
+
+export default GiftcardForm;
