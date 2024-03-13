@@ -21,6 +21,7 @@ const CustomNavbar = () => {
                         <Nav.Link href="/placeanorder">Place an Order</Nav.Link>
                         <Nav.Link href="/gallery">Gallery</Nav.Link>
                         <Nav.Link href="/giftcards">Giftcards</Nav.Link>
+                        <Nav.Link href="/token">Log In</Nav.Link>
                     </Nav>
                 </Container>
             </NavbarBootstrap>

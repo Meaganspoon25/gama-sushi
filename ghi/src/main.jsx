@@ -16,6 +16,8 @@ import Menu from './pages/Menu.jsx'
 import OurVision from './pages/OurVision.jsx'
 import PlaceAnOrder from './pages/PlaceAnOrder.jsx'
 import Gallery from './pages/Gallery.jsx'
+import CreateReview from './pages/CreateReview.jsx'
+import LogIn from './pages/LogIn.jsx'
 
 const router = createBrowserRouter([
     {
@@ -59,6 +61,14 @@ const router = createBrowserRouter([
             {
                 path: 'gallery',
                 element: <Gallery />,
+            },
+            {
+                path: 'reviews/create',
+                element: <CreateReview />,
+            },
+            {
+                path: 'token',
+                element: <LogIn />,
             },
         ],
     },
