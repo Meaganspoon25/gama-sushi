@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import '../../styles/css/giftcardform.css';
+import { useState } from 'react'
+import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
+const API_HOST = import.meta.env.VITE_API_HOST
 
-function GiftcardForm({ onSubmit }) {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [amount, setAmount] = useState('');
-
+const GiftcardForm = ({ onSubmit }) => {
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [amount, setAmount] = useState('')
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const url = 'http://localhost:8000/api/giftcards'; // Endpoint for creating a gift card
+            const url = `${API_HOST}/gitcards` // Endpoint for creating a gift card
             const response = await fetch(url, {
                 method: 'POST',
                 headers: {

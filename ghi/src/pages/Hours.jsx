@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../styles/css/hours.css' 
+import '../styles/css/hours.css' 
 
 function Hours() {
     const hours = [
