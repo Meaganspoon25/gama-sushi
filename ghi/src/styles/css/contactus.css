@@ -37,3 +37,9 @@
 .contact-form button:hover {
     background-color: #0056b3;
 }
+
+body {
+    min-height: 80vh; /* Set the minimum height of the body to be 100% of the viewport height */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}

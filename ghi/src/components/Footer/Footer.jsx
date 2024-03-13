@@ -5,7 +5,7 @@ import logo from '../../images/logo.png' // Path to your logo image
 import instagram from '../../images/instagram-logo.png'
 const API_HOST = import.meta.env.VITE_API_HOST
 
-function Footer() {
+const Footer = () => {
     const [email, setEmail] = useState('')
     const [subscribed, setSubscribed] = useState(false)
 
