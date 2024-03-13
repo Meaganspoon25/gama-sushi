@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../../styles/css/footer.css'
 import { Link } from 'react-router-dom'
-import logo from '../../images/logo.png' // Path to your logo image
+import logo from '../../images/logo.png'
 import instagram from '../../images/instagram-logo.png'
 const API_HOST = import.meta.env.VITE_API_HOST
 

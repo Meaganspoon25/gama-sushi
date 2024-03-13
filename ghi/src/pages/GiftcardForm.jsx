@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 const API_HOST = import.meta.env.VITE_API_HOST
+import '../styles/css/giftcardform.css'
 
 const GiftcardForm = ({ onSubmit }) => {
     const [name, setName] = useState('')
