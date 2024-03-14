@@ -19,6 +19,8 @@ import Gallery from './pages/Gallery.jsx'
 import CreateReview from './pages/CreateReview.jsx'
 import LogIn from './pages/LogIn.jsx'
 import SignUp from './pages/SignUp.jsx'
+import MyReviews from './pages/MyReviews'
+import ReviewDetail from './pages/ReviewDetail'
 
 const router = createBrowserRouter([
     {
@@ -74,6 +76,14 @@ const router = createBrowserRouter([
             {
                 path:'accounts',
                 element: <SignUp />,
+            },
+            {
+                path:'reviews/:user_id/',
+                element:<MyReviews />,
+            },
+            {
+                path: 'reviews/:review_id',
+                element: <ReviewDetail />,
             }
         ],
     },

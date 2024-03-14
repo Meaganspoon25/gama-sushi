@@ -24,7 +24,7 @@ def get_all(
     return repo.get_all()
 
 
-@router.get("/reviews/{user_id}", response_model=List[ReviewsOut])
+@router.get("/reviews/{user_id}/", response_model=List[ReviewsOut])
 def get_all_by_user(
     repo: ReviewsRepo = Depends(),
     account_data: dict = Depends(authenticator.get_current_account_data)
@@ -42,15 +42,12 @@ def delete_review(
 
 
 @router.get("/reviews/{review_id}", response_model=Optional[ReviewsOut])
-async def get_review(
-    review_id: int = Path(...),
-    repo: ReviewsRepo = Depends()
-) -> Optional[ReviewsOut]:
+def get_review(
+    review_id: int,
+    repo: ReviewsRepo = Depends(),
+):
     review = repo.get_one(review_id)
-    if review:
-        return review
-    else:
-        raise HTTPException(status_code=404, detail="Review not found")
+    return review
 
 
 @router.put("/reviews/{review_id}", response_model=ReviewsOut)

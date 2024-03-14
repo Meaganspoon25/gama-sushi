@@ -3,9 +3,9 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import NavbarBootstrap from 'react-bootstrap/Navbar';
 import logo from '../../images/logo.png';
-import LogOut from '../../pages/LogOut'; // Import the Logout component
+import LogOut from '../../pages/LogOut';
 import '../../styles/css/nav.css';
-import useToken from '@galvanize-inc/jwtdown-for-react'; // Import the useToken hook
+import useToken from '@galvanize-inc/jwtdown-for-react'; 
 
 const CustomNavbar = () => {
     const { token } = useToken(); // Get the token using useToken hook
