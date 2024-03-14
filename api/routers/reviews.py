@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, Response, HTTPException, Path
+from fastapi import APIRouter, Depends, Response
 from queries.reviews import ReviewsIn, ReviewsOut, ReviewsRepo
 from typing import List, Optional
 from authenticator import authenticator
@@ -42,15 +42,12 @@ def delete_review(
 
 
 @router.get("/reviews/{review_id}", response_model=Optional[ReviewsOut])
-async def get_review(
-    review_id: int = Path(...),
-    repo: ReviewsRepo = Depends()
-) -> Optional[ReviewsOut]:
+def get_review(
+    review_id: int,
+    repo: ReviewsRepo = Depends(),
+):
     review = repo.get_one(review_id)
-    if review:
-        return review
-    else:
-        raise HTTPException(status_code=404, detail="Review not found")
+    return review
 
 
 @router.put("/reviews/{review_id}", response_model=ReviewsOut)

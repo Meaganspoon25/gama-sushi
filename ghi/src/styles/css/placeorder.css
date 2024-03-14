@@ -1,0 +1,15 @@
+.cart{
+    flex: 1;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.menu-items{
+    flex: 1;
+}
+
+.place-order-container{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}

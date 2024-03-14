@@ -22,30 +22,50 @@ class OrderOut(BaseModel):
 
 class OrderRepository:
     def create(self, order: OrderIn, user_id: int) -> OrderOut:
-        # connect the database
         with pool.connection() as conn:
-            # get a cursor (something to run SQL with)
             with conn.cursor() as db:
-                # Run out INSERT statement
-                result = db.execute(
+                # Check if the item already exists for the user
+                db.execute(
                     """
-                    INSERT INTO orders
-                        (item_name, item_quantity, item_price, user_id)
-                    VALUES
-                    (%s, %s, %s, %s)
-                    RETURNING id;
+                    SELECT id, item_quantity
+                    FROM orders
+                    WHERE item_name = %s AND user_id = %s
                     """,
-                    [
-                        order.item_name,
-                        order.item_quantity,
-                        order.item_price,
-                        user_id,
-                    ]
+                    [order.item_name, user_id]
                 )
-                id = result.fetchone()[0]
-                # Return new data
-                old_data = order.dict()
-                return OrderOut(id=id, **old_data)
+                existing_order = db.fetchone()
+
+                if existing_order:
+                    # If the item exists, update its quantity
+                    new_quantity = existing_order[1] + order.item_quantity
+                    db.execute(
+                        """
+                        UPDATE orders
+                        SET item_quantity = %s
+                        WHERE id = %s
+                        """,
+                        [new_quantity, existing_order[0]]
+                    )
+                    return OrderOut(id=existing_order[0], **order.dict())
+                else:
+                    # If the item does not exist, insert a new record
+                    result = db.execute(
+                        """
+                        INSERT INTO orders
+                            (item_name, item_quantity, item_price, user_id)
+                        VALUES
+                            (%s, %s, %s, %s)
+                        RETURNING id;
+                        """,
+                        [
+                            order.item_name,
+                            order.item_quantity,
+                            order.item_price,
+                            user_id,
+                        ]
+                    )
+                    new_id = result.fetchone()[0]
+                    return OrderOut(id=new_id, **order.dict())
 
     def delete(self, order_id: int) -> bool:
         try:
