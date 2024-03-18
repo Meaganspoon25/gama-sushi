@@ -41,7 +41,7 @@ def delete_review(
     return repo.delete(review_id, user_id=account_data['id'])
 
 
-@router.get("/reviews/{review_id}", response_model=Optional[ReviewsOut])
+@router.get("/review/{review_id}", response_model=Optional[ReviewsOut])
 def get_review(
     review_id: int,
     repo: ReviewsRepo = Depends(),
@@ -50,7 +50,7 @@ def get_review(
     return review
 
 
-@router.put("/reviews/{review_id}", response_model=ReviewsOut)
+@router.put("/review/{review_id}", response_model=Optional[ReviewsOut])
 def update_review(
     review_id: int,
     reviews: ReviewsIn,

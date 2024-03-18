@@ -87,7 +87,7 @@ const Footer = () => {
 
                 <div className="d-flex flex-column flex-sm-row justify-content-center py-4 my-4 border-top">
                     <div className="mt-2">
-                        <a href="https://www.instagram.com">
+                        <a href="https://www.instagram.com/gamasushi702/">
                             <img
                                 src={instagram}
                                 alt="Instagram"

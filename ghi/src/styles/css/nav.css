@@ -8,6 +8,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 10px; 
-    padding-right: 10px; 
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.dropdown-toggle:hover {
+    transform: translateY(-3px);
+    transition: transform 0.3s ease;
+    color: black;
+    outline: 2px solid black;
 }

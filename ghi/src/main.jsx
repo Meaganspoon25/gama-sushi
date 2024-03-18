@@ -20,8 +20,9 @@ import CreateReview from './pages/CreateReview.jsx'
 import LogIn from './pages/LogIn.jsx'
 import SignUp from './pages/SignUp.jsx'
 import OrderConfirmation from './pages/OrderConfirmation.jsx'
-import MyReviews from './pages/MyReviews'
-import ReviewDetail from './pages/ReviewDetail'
+import MyReviews from './pages/MyReviews.jsx'
+import ReviewDetail from './pages/ReviewDetail.jsx'
+import OrderHistory from './pages/OrderHistory.jsx'
 
 const router = createBrowserRouter([
     {
@@ -87,9 +88,13 @@ const router = createBrowserRouter([
                 element:<MyReviews />,
             },
             {
-                path: 'reviews/:review_id',
+                path: 'review/:review_id',
                 element: <ReviewDetail />,
-            }
+            },
+            {
+                path: 'orders/:user_id',
+                element: <OrderHistory />,
+            },
         ],
     },
 ])
