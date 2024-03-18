@@ -128,10 +128,10 @@ const PlaceOrder = () => {
     }
 
     const handlePlaceOrder = () => {
-        return (
-            navigate('/orderconfirmation')
-        )
-    }
+            if (cart.length > 0){
+            navigate('/orderconfirmation', {state: {cart, tip}});
+            }
+        }
 
     const menuItems = [
         {
@@ -169,6 +169,20 @@ const PlaceOrder = () => {
         <div className="place-order-container">
             <div className="menu-items">
                 <h2>Allergen Information</h2>
+                <h6>
+                    SEAFOOD, SHELLFISH OR EGGS MAY INCREASE YOUR RISK OF
+                    FOODBORNE ILLNESS, ESPECIALLY IF YOU HAVE CERTAIN MEDICAL
+                    CONDITIONS. To our guests with food sensitivities, allergies
+                    or special dietary needs: Our restaurants prepare and serve
+                    products that contain peanuts, tree nuts, fish, shellfish,
+                    eggs, milk, soy and gluten. Regular kitchen operations
+                    involve shared cooking and preparation areas, and food
+                    variations may occur due to differences in suppliers,
+                    ingredient substitutions, recipe revisions, and/or
+                    preparation at the restaurant. For these reasons, we cannot
+                    guarantee that any menu item will be completely free of
+                    allergens.
+                </h6>
                 {/* Menu items */}
                 {menuItems.map((category) => (
                     <div key={category.category}>
@@ -195,7 +209,7 @@ const PlaceOrder = () => {
                 ))}
             </div>
             <div className="cart">
-                <h2>Cart</h2>
+                <h2>Your Cart</h2>
                 {/* Cart items */}
                 <ul>
                     {cart.map((item, index) => (

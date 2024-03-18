@@ -7,20 +7,16 @@ import Friedrice from '../images/Friedrice.png';
 import Californiaroll from '../images/Californiaroll.png';
 import Zarusoba from '../images/Zarusoba.png';
 import restaurant from '../images/restaurant.png';
-
 const Home = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const images = [Misosoup, Sushitray, Dumplings];
     const smallImages = [Friedrice, Californiaroll, Zarusoba];
-
     const nextSlide = () => {
         setCurrentSlide((prevSlide) => (prevSlide === images.length - 1 ? 0 : prevSlide + 1));
     };
-
     const prevSlide = () => {
         setCurrentSlide((prevSlide) => (prevSlide === 0 ? images.length - 1 : prevSlide - 1));
     };
-
     return (
         <div className="home-background">
             <div className="home-container">
@@ -45,13 +41,11 @@ const Home = () => {
                         <path d="M10 2L18 10L10 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                 </button>
-
                 <div className="small-photos">
                     {smallImages.map((smallImage, index) => (
                         <img key={index} src={smallImage} alt={`Food ${index + 1}`} />
                     ))}
                 </div>
-
                 <div className="why-choose-us">
                     <h2>Why Choose Us</h2>
                     <div className="why-choose-us-grid">
@@ -73,7 +67,6 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-
                 {/* "Follow us on Instagram" section */}
                 <div className="follow-us-instagram">
                     <h2>Follow us on Instagram</h2>
@@ -84,7 +77,6 @@ const Home = () => {
                         <a href="https://www.instagram.com/gamasushi702/" target="_blank" rel="noopener noreferrer"><img src={restaurant} alt="Instagram 4" /></a>
                     </div>
                 </div>
-
                 <div className="location-hours">
                     <h2>Location</h2>
                     <div className="google-maps-container">
@@ -104,5 +96,4 @@ const Home = () => {
         </div>
     );
 };
-
 export default Home;

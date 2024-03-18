@@ -15,9 +15,12 @@ const Login = () => {
 
             navigate('/');
         } catch (error) {
-            
             console.error('Login failed:', error);
         }
+    };
+
+    const handleSignUpClick = () => {
+        navigate('/accounts'); // Navigate to the sign-up page when the button is clicked
     };
 
     return (
@@ -45,12 +48,19 @@ const Login = () => {
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
-                    <div>
+                    <div className="mb-3">
                         <input
-                            className="btn btn-primary"
+                            className="btn btn-primary me-2"
                             type="submit"
                             value="Login"
                         />
+                        <button
+                            className="btn btn-secondary"
+                            type="button"
+                            onClick={handleSignUpClick}
+                        >
+                            Sign Up
+                        </button>
                     </div>
                 </form>
             </div>
