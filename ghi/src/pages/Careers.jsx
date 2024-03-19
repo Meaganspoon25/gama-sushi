@@ -55,15 +55,30 @@ const CareerForm = () => {
     };
 
     return (
-        <div className="bg-image" style={{ backgroundImage: `url(${Careers})`, height: '100vh' }}>
-            <div className="mask" style={{ backgroundColor: 'rgba(186, 186, 172, 0.8)', height: '100%' }}>
+        <div
+            className="bg-image"
+            style={{ backgroundImage: `url(${Careers})`, height: '100vh' }}
+        >
+            <div
+                className="mask"
+                style={{
+                    backgroundColor: 'rgba(186, 186, 172, 0.6)',
+                    height: '100%',
+                }}
+            >
                 <div className="d-flex justify-content-center align-items-center h-100">
                     <div className="container" style={{ marginTop: '-200px' }}>
                         <div className="row">
                             <div className="offset-md-3 col-md-6">
                                 <div className="shadow p-4 mt-4">
-                                    <h1>Careers (Join our Team!)</h1>
-                                    {submitSuccess && <p className="text-black">Form submitted successfully!</p>}
+                                    <h1>
+                                        <b>Careers (Join our Team!)</b>
+                                    </h1>
+                                    {submitSuccess && (
+                                        <p className="text-black">
+                                            Form submitted successfully!
+                                        </p>
+                                    )}
                                     <Form onSubmit={handleSubmit}>
                                         <div className="form-floating mb-3">
                                             <input
@@ -73,9 +88,13 @@ const CareerForm = () => {
                                                 name="first_name"
                                                 className="form-control"
                                                 value={firstName}
-                                                onChange={(e) => setFirstName(e.target.value)}
+                                                onChange={(e) =>
+                                                    setFirstName(e.target.value)
+                                                }
                                             />
-                                            <label htmlFor="first_name">First Name</label>
+                                            <label htmlFor="first_name">
+                                                <b>First Name</b>
+                                            </label>
                                         </div>
                                         <div className="form-floating mb-3">
                                             <input
@@ -85,9 +104,13 @@ const CareerForm = () => {
                                                 name="last_name"
                                                 className="form-control"
                                                 value={lastName}
-                                                onChange={(e) => setLastName(e.target.value)}
+                                                onChange={(e) =>
+                                                    setLastName(e.target.value)
+                                                }
                                             />
-                                            <label htmlFor="last_name">Last Name</label>
+                                            <label htmlFor="last_name">
+                                                <b>Last Name</b>
+                                            </label>
                                         </div>
                                         <div className="form-floating mb-3">
                                             <input
@@ -97,9 +120,13 @@ const CareerForm = () => {
                                                 name="email"
                                                 className="form-control"
                                                 value={email}
-                                                onChange={(e) => setEmail(e.target.value)}
+                                                onChange={(e) =>
+                                                    setEmail(e.target.value)
+                                                }
                                             />
-                                            <label htmlFor="email">Email</label>
+                                            <label htmlFor="email">
+                                                <b>Email</b>
+                                            </label>
                                         </div>
                                         <div className="form-floating mb-3">
                                             <input
@@ -109,9 +136,15 @@ const CareerForm = () => {
                                                 name="phone_number"
                                                 className="form-control"
                                                 value={phoneNumber}
-                                                onChange={(e) => setPhoneNumber(e.target.value)}
+                                                onChange={(e) =>
+                                                    setPhoneNumber(
+                                                        e.target.value
+                                                    )
+                                                }
                                             />
-                                            <label htmlFor="phone_number">Phone Number</label>
+                                            <label htmlFor="phone_number">
+                                                <b>Phone Number</b>
+                                            </label>
                                         </div>
                                         <div className="form-floating mb-3">
                                             <input
@@ -121,9 +154,13 @@ const CareerForm = () => {
                                                 name="resume"
                                                 className="form-control"
                                                 value={resume}
-                                                onChange={(e) => setResume(e.target.value)}
+                                                onChange={(e) =>
+                                                    setResume(e.target.value)
+                                                }
                                             />
-                                            <label htmlFor="resume">Resume</label>
+                                            <label htmlFor="resume">
+                                                <b>Resume</b>
+                                            </label>
                                         </div>
                                         <Button variant="primary" type="submit">
                                             Submit
@@ -136,7 +173,7 @@ const CareerForm = () => {
                 </div>
             </div>
         </div>
-    );
+    )
 };
 
 export default CareerForm;

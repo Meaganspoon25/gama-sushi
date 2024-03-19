@@ -7,6 +7,7 @@ from routers import gallery, careers
 from routers import reviews
 from routers import cart
 from routers import newsletter
+from routers import contact
 
 app = FastAPI()
 app.include_router(giftcards.router)
@@ -17,7 +18,7 @@ app.include_router(careers.router)
 app.include_router(reviews.router)
 app.include_router(cart.router)
 app.include_router(newsletter.router)
-
+app.include_router(contact.router)
 
 app.add_middleware(
     CORSMiddleware,

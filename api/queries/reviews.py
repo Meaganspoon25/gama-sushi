@@ -1,13 +1,13 @@
 from pydantic import BaseModel
 from queries.pool import pool
-from datetime import datetime
+from datetime import date
 from typing import Optional
 
 
 class ReviewsIn(BaseModel):
     review: str
     recommendation: bool
-    date_submitted: datetime
+    date_submitted: date
     rating: int
 
 
@@ -15,7 +15,7 @@ class ReviewsOut(BaseModel):
     id: int
     review: str
     recommendation: bool
-    date_submitted: datetime
+    date_submitted: date
     rating: int
 
 

@@ -1,5 +1,6 @@
 import React from 'react'
-import '../styles/css/hours.css' 
+import '../styles/css/hours.css'
+import Restaurant from '../images/hours.jpeg'
 
 function Hours() {
     const hours = [
@@ -13,15 +14,23 @@ function Hours() {
     ]
 
     return (
-        <div className="hours">
-            <h2>Restaurant Hours</h2>
-            <ul>
-                {hours.map((item, index) => (
-                    <li key={index}>
-                        <strong>{item.day}</strong>: {item.hours}
-                    </li>
-                ))}
-            </ul>
+        <div
+            className="bg-image"
+            style={{ backgroundImage: `url(${Restaurant})`, height: '100vh' }}
+        >
+            <div className="hours-wrapper">
+                <div className="hours">
+                    <h2>Restaurant Hours</h2>
+                    <ul>
+                        {hours.map((item, index) => (
+                            <li key={index}>
+                                <strong>{item.day}</strong>:{' '}
+                                <b>{item.hours}</b>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
         </div>
     )
 }

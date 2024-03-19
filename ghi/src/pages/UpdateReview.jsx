@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import useToken from '@galvanize-inc/jwtdown-for-react';
-
+import { Dropdown } from 'react-bootstrap';
 const API_HOST = import.meta.env.VITE_API_HOST;
-
 const UpdateReview = () => {
     const navigate = useNavigate();
     const { review_id } = useParams();
@@ -20,7 +19,6 @@ const UpdateReview = () => {
         rating: '',
     });
     const [successMessage, setSuccessMessage] = useState('');
-
     const handleFormChange = (e) => {
         const { name, value } = e.target;
         setFormData(prevState => ({
@@ -28,7 +26,6 @@ const UpdateReview = () => {
             [name]: value
         }));
     };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -43,7 +40,6 @@ const UpdateReview = () => {
             if (!response.ok) {
                 throw new Error('Failed to update review');
             } else {
-
                 setSuccessMessage('Review updated!');
                 setFormData({
                     review: '',
@@ -57,8 +53,6 @@ const UpdateReview = () => {
             alert('Failed to update review. Please try again.');
         }
     };
-
-
     return (
         <div className="row">
             <div className="offset-3 col-6">
@@ -131,14 +125,10 @@ const UpdateReview = () => {
                         >
                             Update Review
                         </button>
-
-
-
                     </form>
                 </div>
             </div>
         </div>
     );
 };
-
 export default UpdateReview;
