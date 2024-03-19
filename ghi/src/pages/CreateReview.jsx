@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import useToken from '@galvanize-inc/jwtdown-for-react'
 import { Dropdown } from 'react-bootstrap';
-
 const API_HOST = import.meta.env.VITE_API_HOST
 function CreateReview() {
     const [formData, setFormData] = useState({
@@ -129,7 +128,6 @@ function CreateReview() {
                         </button>
                     </form>
                 </div>
-
             </div>
         </div>
     )
