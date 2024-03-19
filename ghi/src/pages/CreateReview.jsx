@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import useToken from '@galvanize-inc/jwtdown-for-react'
+import { Dropdown } from 'react-bootstrap';
+
 const API_HOST = import.meta.env.VITE_API_HOST
 function CreateReview() {
     const [formData, setFormData] = useState({
@@ -44,6 +46,18 @@ function CreateReview() {
     return (
         <div className="row">
             <div className="offset-3 col-6">
+                {token && (
+                <Dropdown className="mr-2 d-flex justify-content-center">
+                    <Dropdown.Toggle variant="black" id="dropdownMenuButton">
+                        Reviews
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                        <Dropdown.Item href={'/reviews/${user_id}'}>My Reviews</Dropdown.Item>
+                        <Dropdown.Item href="/reviews/create">Create a New Review</Dropdown.Item>
+                        <Dropdown.Item href="/reviews">Review List</Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
+            )}
                 <div className="shadow p-4 mt-4">
                     <h1>New Review</h1>
                     {successMessage && (
@@ -115,6 +129,7 @@ function CreateReview() {
                         </button>
                     </form>
                 </div>
+
             </div>
         </div>
     )

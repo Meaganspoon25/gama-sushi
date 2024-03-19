@@ -20,7 +20,7 @@ const Login = () => {
     };
 
     const handleSignUpClick = () => {
-        navigate('/accounts'); // Navigate to the sign-up page when the button is clicked
+        navigate('/accounts');
     };
 
     return (

@@ -1,9 +1,8 @@
-
 import React, { useState, useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import useToken from '@galvanize-inc/jwtdown-for-react';
-import '../styles/css/reviewlist.css';
 import StarRating from './StarRating';
+import { Dropdown } from 'react-bootstrap';
 
 const API_HOST = import.meta.env.VITE_API_HOST;
 
@@ -58,13 +57,30 @@ const MyReviews = () => {
     };
 
     const handleUpdate = (reviewId) => {
-
         navigate(`/review/${reviewId}`);
     };
 
     return (
-        <>
-            <h1 className="review-list-title">My Reviews</h1>
+        <div className="container">
+            <div className="row">
+                <div className="col">
+                    <h1 className="review-list-title">My Reviews</h1>
+                </div>
+                <div className="col d-flex justify-content-end">
+                    {token && (
+                        <Dropdown className="mr-2">
+                            <Dropdown.Toggle variant="black" id="dropdownMenuButton">
+                                Reviews
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                                <Dropdown.Item href={`/reviews/${user_id}`}>My Reviews</Dropdown.Item>
+                                <Dropdown.Item href="/reviews/create">Create a New Review</Dropdown.Item>
+                                <Dropdown.Item href="/reviews">Review List</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+                    )}
+                </div>
+            </div>
             <div className="review-list-container">
                 {reviews.map((review, index) => (
                     <div key={index} className="review-item">
@@ -77,7 +93,7 @@ const MyReviews = () => {
                     </div>
                 ))}
             </div>
-        </>
+        </div>
     );
 };
 

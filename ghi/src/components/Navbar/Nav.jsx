@@ -22,11 +22,7 @@ const CustomNavbar = () => {
                         </NavbarBootstrap.Brand>
                     </div>
                     <Nav className="me-auto">
-                        <Dropdown>
-                            <Dropdown.Toggle variant="black" id="dropdownMenuButton">
-                                Explore
-                            </Dropdown.Toggle>
-                            <Dropdown.Menu>
+
                                 <Nav.Link href="/menu">Menu</Nav.Link>
                                 <Nav.Link href="/ourvision">Our Vision</Nav.Link>
                                 <Nav.Link href="/placeanorder">Place an Order</Nav.Link>
@@ -40,8 +36,7 @@ const CustomNavbar = () => {
                                 {!token && (
                                     <Nav.Link href="/token">Log In</Nav.Link>
                                 )}
-                            </Dropdown.Menu>
-                        </Dropdown>
+                           
                     </Nav>
                 </Container>
             </NavbarBootstrap>
