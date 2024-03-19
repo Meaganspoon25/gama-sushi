@@ -20,7 +20,7 @@ const Home = () => {
             setCurrentSlide((prevSlide) =>
                 prevSlide === images.length - 1 ? 0 : prevSlide + 1
             )
-        }, 4000)
+        }, 2000)
         return () => clearInterval(interval)
     }, [currentSlide])
     const nextSlide = () => {
@@ -251,7 +251,7 @@ const Home = () => {
                         <div className="centered-paragraph">
                             <p style={{ fontWeight: 'bold' }}>
                                 Join us at Gama Sushi, located at 123 Main
-                                Street, Las Vegas, Nevada, 88901 :star-struck:
+                                Street, Las Vegas, Nevada, 88901 
                             </p>
                         </div>
                     </div>
