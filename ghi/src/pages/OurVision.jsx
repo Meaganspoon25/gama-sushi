@@ -3,6 +3,7 @@ import ourvisionheader from '../images/ourvisionheader.jpg'
 import ourvisionsushi from '../images/ourvisionsushi.jpg'
 import ourvisionsoup from '../images/ourvisionsoup.jpg'
 import ourvisiondumplings from '../images/ourvisiondumplings.jpg'
+
 const OurVision = () => {
     return (
         <section className="our-vision">
