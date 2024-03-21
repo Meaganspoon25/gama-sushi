@@ -24,8 +24,10 @@ class TestCreateCareerForm(unittest.TestCase):
             phone_number=1234567890,
             resume="John's resume"
         )
-        response = create_career_form(careerform=career_form_data, 
-                                      repo=mock_repo)
+        response = create_career_form(
+            careerform=career_form_data,
+            repo=mock_repo
+        )
         # Assert the response
         expected_response = CareersFormOut(
             id=1,

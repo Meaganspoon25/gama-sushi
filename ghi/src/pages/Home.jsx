@@ -96,7 +96,7 @@ const Home = () => {
                     ))}
                 </div>
                 <div className="why-choose-us">
-                    <h2>Why Choose Us</h2>
+                    <h2>Why Choose Us?</h2>
                     <div className="why-choose-us-grid">
                         <div className="why-choose-us-item">
                             <h3>Our History</h3>
@@ -108,17 +108,7 @@ const Home = () => {
                                 for its exquisite sushi creations and
                                 exceptional dining experience, Gama Sushi
                                 quickly became a favorite among locals and
-                                tourists alike. Chef Kenji's commitment to using
-                                only the freshest ingredients and innovative
-                                flair has resulted in a menu offering a wide
-                                range of sushi rolls, sashimi, and Japanese
-                                delicacies. The restaurant's warm and inviting
-                                atmosphere, adorned with traditional Japanese
-                                decor, enhances the dining experience. Chef
-                                Kenji's dedication to excellence ensures that
-                                Gama Sushi remains a top choice for sushi
-                                enthusiasts seeking a memorable and authentic
-                                culinary adventure.
+                                tourists alike.
                             </p>
                         </div>
                         <div className="why-choose-us-item">
@@ -131,14 +121,7 @@ const Home = () => {
                                 to using only the freshest and highest quality
                                 ingredients, expertly crafted by our talented
                                 chefs to create a menu that is both innovative
-                                and authentic. Our warm and inviting atmosphere,
-                                paired with exceptional service, aims to provide
-                                a dining experience that exceeds expectations
-                                and leaves a lasting impression on our guests.
-                                We strive to be a destination where food lovers
-                                can indulge in the finest sushi and Japanese
-                                cuisine, creating memories to cherish for years
-                                to come.
+                                and authentic.
                             </p>
                         </div>
                         <div className="why-choose-us-item">
@@ -152,14 +135,7 @@ const Home = () => {
                                 sushi rice is carefully selected for its texture
                                 and flavor, and we use traditional Japanese
                                 seasonings and sauces to enhance the taste of
-                                our dishes. We also prioritize locally sourced
-                                produce and ingredients whenever possible,
-                                ensuring that each dish is fresh, flavorful, and
-                                of the highest quality. With our attention to
-                                detail and commitment to excellence, we strive
-                                to create an exceptional dining experience for
-                                our guests, one that celebrates the rich flavors
-                                and traditions of Japanese cuisine.
+                                our dishes.
                             </p>
                         </div>
                         <div className="why-choose-us-item">
@@ -170,22 +146,9 @@ const Home = () => {
                                 Japanese cuisine. From traditional sushi rolls
                                 to innovative creations, each dish is carefully
                                 crafted to delight the senses and satisfy the
-                                palate. Start your meal with our fresh sashimi
-                                or savory appetizers like edamame or miso soup.
-                                Then, explore our wide selection of sushi rolls,
-                                including classic favorites like California
-                                rolls and spicy tuna rolls, as well as our
-                                chef's special creations. For those craving
-                                something more substantial, we offer a variety
-                                of rice and noodle dishes, such as teriyaki
-                                chicken or beef udon. Pair your meal with a
-                                selection from our extensive sake menu or choose
-                                from our range of Japanese teas and beverages.
-                                Finish your dining experience with one of our
-                                delicious desserts, like green tea ice cream or
-                                mochi. With its blend of traditional flavors and
-                                modern flair, our menu is sure to delight sushi
-                                enthusiasts and food lovers alike.
+                                palate. With its blend of traditional flavors
+                                and modern flair, our menu is sure to delight
+                                sushi enthusiasts and food lovers alike.
                             </p>
                         </div>
                     </div>
@@ -197,42 +160,67 @@ const Home = () => {
                             href="https://www.instagram.com/gamasushi702/"
                             target="_blank"
                             rel="noopener noreferrer"
+                            className="instagram-photo-link"
                         >
-                            <img src={crabrangoon} alt="Instagram 1" />
+                            <div className="instagram-photo crabrangoon">
+                                <img src={crabrangoon} alt="Instagram 1" />
+                                <div className="photo-overlay">
+                                    <span className="overlay-text">
+                                        Crab Rangoon
+                                    </span>
+                                </div>
+                            </div>
                         </a>
                         <a
                             href="https://www.instagram.com/gamasushi702/"
                             target="_blank"
                             rel="noopener noreferrer"
+                            className="instagram-photo-link"
                         >
-                            <img src={ramensoup} alt="Instagram 2" />
+                            <div className="instagram-photo ramensoup">
+                                <img src={ramensoup} alt="Instagram 2" />
+                                <div className="photo-overlay">
+                                    <span className="overlay-text">
+                                        Ramen Soup
+                                    </span>
+                                </div>
+                            </div>
                         </a>
                         <a
                             href="https://www.instagram.com/gamasushi702/"
                             target="_blank"
                             rel="noopener noreferrer"
+                            className="instagram-photo-link"
                         >
-                            <img src={chickenkarrage} alt="Instagram 3" />
+                            <div className="instagram-photo chickenkarrage">
+                                <img src={chickenkarrage} alt="Instagram 3" />
+                                <div className="photo-overlay">
+                                    <span className="overlay-text">
+                                        Chicken Karaage
+                                    </span>
+                                </div>
+                            </div>
                         </a>
                         <a
                             href="https://www.instagram.com/gamasushi702/"
                             target="_blank"
                             rel="noopener noreferrer"
+                            className="instagram-photo-link"
                         >
-                            <img src={spicytuna} alt="Instagram 4" />
+                            <div className="instagram-photo spicytuna">
+                                <img src={spicytuna} alt="Instagram 4" />
+                                <div className="photo-overlay">
+                                    <span className="overlay-text">
+                                        Spicy Tuna
+                                    </span>
+                                </div>
+                            </div>
                         </a>
                     </div>
                 </div>
                 <div className="location-hours">
-                    <h2>Location</h2>
-                    <div
-                        className="google-maps-container"
-                        style={{
-                            border: '2px solid black',
-                            padding: '1px',
-                            borderRadius: '5px',
-                        }}
-                    >
+                    <h2>Visit Our Location!</h2>
+                    <div className="google-maps-container">
                         <iframe
                             title="Google Maps"
                             width="100%"
@@ -240,18 +228,18 @@ const Home = () => {
                             loading="lazy"
                             allowFullScreen
                             frameBorder="0"
+                            style={{
+                                border: '3px solid black',
+                                borderRadius: '5px',
+                            }}
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d322253.9445257926!2d-115.27972618023456!3d36.16994120000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80beb782a4f57dd1%3A0x3accd5e6d5b379a3!2sLas%20Vegas%2C%20NV!5e0!3m2!1sen!2sus!4v1646949041557!5m2!1sen!2sus"
                         ></iframe>
-                        <div
-                            style={{
-                                borderTop: '2px solid black',
-                                marginTop: '-6px',
-                            }}
-                        ></div>
                         <div className="centered-paragraph">
-                            <p style={{ fontWeight: 'bold' }}>
-                                Join us at Gama Sushi, located at 123 Main
-                                Street, Las Vegas, Nevada, 88901 
+                            <p
+                                className="big-text"
+                                style={{ fontWeight: 'bold' }}
+                            >
+                                123 Main Street, Las Vegas, Nevada, 88901
                             </p>
                         </div>
                     </div>

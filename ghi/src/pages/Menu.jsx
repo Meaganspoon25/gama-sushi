@@ -26,58 +26,57 @@ import spicytunaroll from '../images/spicytunaroll.png'
 import spicyscallophandroll from '../images/spicyscallophandroll.png'
 
 const Menu = () => {
-    const sushiAppetizers = {
-        Edamame: 5.0,
-        'Seaweed Salad': 7.0,
-        'Shrimp Tempura': 8.5,
-        'Miso Soup': 4.0,
-        'Tuna Tartare': 12.0,
-        'Scallop Carpaccio': 13.0,
-        'Wakame Salad': 6.5,
-        'Pork Gyoza': 7.5,
-        'Shrimp Shumai': 7.5,
-    }
+    const sushiAppetizers = [
+        'Edamame',
+        ' Seaweed Salad',
+        ' Shrimp Tempura',
+        ' Tuna Tartare',
+        ' Scallop Carpaccio',
+        ' Wakame Salad',
+        ' Pork Gyoza',
+        ' Shrimp Shumai',
+    ]
 
-    const soupsAndNoodles = {
-        'Miso Soup': 3.99,
-        Ramen: 9.99,
-        'Udon Noodle Soup': 8.49,
-        Pho: 10.99,
-        'Tom Yum Soup': 7.99,
-        'Soba Noodles': 8.99,
-        'Hot and Sour Soup': 5.49,
-        'Tonkotsu Ramen': 11.99,
-        Laksa: 12.49,
-    }
+    const soupsAndNoodles = [
+        ' Miso Soup',
+        ' Ramen',
+        ' Udon Noodle Soup',
+        ' Pho',
+        ' Tom Yum Soup',
+        ' Soba Noodles',
+        ' Hot and Sour Soup',
+        ' Tonkotsu Ramen',
+        ' Laksa',
+    ]
 
     const NigiriSushi = [
-        eel,
-        octopus,
-        salmon,
-        tuna,
-        toro,
-        sweetshrimp,
-        snowcrab,
-        yellowtail,
-        tamago,
-        squid,
-        premiumbeef,
-        shrimp,
+        { name: 'Eel', src: eel },
+        { name: 'Octopus', src: octopus },
+        { name: 'Salmon', src: salmon },
+        { name: 'Tuna', src: tuna },
+        { name: 'Toro', src: toro },
+        { name: 'Sweet Shrimp', src: sweetshrimp },
+        { name: 'Shrimp', src: shrimp },
+        { name: 'Snow Crab', src: snowcrab },
+        { name: 'Yellowtail', src: yellowtail },
+        { name: 'Tamago', src: tamago },
+        { name: 'Squid', src: squid },
+        { name: 'Premium Beef', src: premiumbeef },
     ]
 
     const PremiumRolls = [
-        californiacrabroll,
-        caterpillarroll,
-        crunchyroll,
-        crunchytunahandroll,
-        philadelphiaroll,
-        rainbowroll,
-        reddragonroll,
-        spicysalmonhandroll,
-        salmonhandroll,
-        spicytunaroll,
-        spicyscallophandroll,
-        tempuraroll,
+        { name: 'California Crab Roll', src: californiacrabroll },
+        { name: 'Tempura Roll', src: tempuraroll },
+        { name: 'Caterpillar Roll', src: caterpillarroll },
+        { name: 'Crunchy Roll', src: crunchyroll },
+        { name: 'Crunchy Tuna Hand Roll', src: crunchytunahandroll },
+        { name: 'Philadelphia Roll', src: philadelphiaroll },
+        { name: 'Rainbow Roll', src: rainbowroll },
+        { name: 'Red Dragon Roll', src: reddragonroll },
+        { name: 'Spicy Salmon Hand Roll', src: spicysalmonhandroll },
+        { name: 'Salmon Hand Roll', src: salmonhandroll },
+        { name: 'Spicy Tuna Roll', src: spicytunaroll },
+        { name: 'Spicy Scallop Hand Roll', src: spicyscallophandroll },
     ]
 
     return (
@@ -87,38 +86,35 @@ const Menu = () => {
                 <div className="col-md-6 text-center">
                     <h2>Appetizers</h2>
                     <ul className="list-unstyled">
-                        {Object.entries(sushiAppetizers).map(
-                            ([dish, price], index) => (
-                                <li key={index} className="mb-3">
-                                    <strong>{dish}</strong>: ${price.toFixed(2)}
-                                </li>
-                            )
-                        )}
+                        {sushiAppetizers.map((dish, index) => (
+                            <li key={index} className="mb-3">
+                                {dish}
+                            </li>
+                        ))}
                     </ul>
                 </div>
                 <div className="col-md-6 text-center">
-                    <h2>Soups and Noodles</h2>
-                    <ul className="list-unstyled">
-                        {Object.entries(soupsAndNoodles).map(
-                            ([dish, price], index) => (
-                                <li key={index} className="mb-3">
-                                    <strong>{dish}</strong>: ${price.toFixed(2)}
-                                </li>
-                            )
-                        )}
+                    <h2>Soups & Noodles</h2>
+                    <ul className="list-unstyled bulleted-appetizers">
+                        {soupsAndNoodles.map((dish, index) => (
+                            <li key={index} className="mb-3">
+                                {dish}
+                            </li>
+                        ))}
                     </ul>
                 </div>
 
                 <div className="col-12">
                     <h2 className="text-center">Sushi (Nigiri)</h2>
                     <div className="row">
-                        {NigiriSushi.map((image, index) => (
-                            <div key={index} className="col-3 mb-4">
+                        {NigiriSushi.map((item, index) => (
+                            <div key={index} className="col-3 mb-4 text-center">
                                 <img
-                                    src={image}
-                                    alt={`Sushi ${index + 1}`}
+                                    src={item.src}
+                                    alt={`Sushi ${item.name}`}
                                     className="img-fluid"
                                 />
+                                <p className="font-weight-bold">{item.name}</p>
                             </div>
                         ))}
                     </div>
@@ -127,13 +123,14 @@ const Menu = () => {
                 <div className="col-12">
                     <h2 className="text-center mt-5">Rolls</h2>
                     <div className="row">
-                        {PremiumRolls.map((image, index) => (
-                            <div key={index} className="col-3 mb-4">
+                        {PremiumRolls.map((item, index) => (
+                            <div key={index} className="col-3 mb-4 text-center">
                                 <img
-                                    src={image}
-                                    alt={`Rolls ${index + 1}`}
+                                    src={item.src}
+                                    alt={`Rolls ${item.name}`}
                                     className="img-fluid"
                                 />
+                                <p className="font-weight-bold">{item.name}</p>
                             </div>
                         ))}
                     </div>
