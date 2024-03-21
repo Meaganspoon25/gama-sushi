@@ -148,76 +148,81 @@ const Home = () => {
                                 Japanese cuisine. From traditional sushi rolls
                                 to innovative creations, each dish is carefully
                                 crafted to delight the senses and satisfy the
-                                palate. With its blend of traditional flavors and
-                                modern flair, our menu is sure to delight sushi
-                                enthusiasts and food lovers alike.
+                                palate. With its blend of traditional flavors
+                                and modern flair, our menu is sure to delight
+                                sushi enthusiasts and food lovers alike.
                             </p>
                         </div>
                     </div>
                 </div>
                 <div className="follow-us-instagram">
-    <h2>Follow us on Instagram</h2>
-    <div className="instagram-photos-container">
-        <a
-            href="https://www.instagram.com/gamasushi702/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="instagram-photo-link"
-        >
-            <div className="instagram-photo crabrangoon">
-                <img src={crabrangoon} alt="Instagram 1" />
-                <div className="photo-overlay">
-                    <span className="overlay-text">Crab Rangoon</span>
-                </div>
-            </div>
-        </a>
-        <a
-            href="https://www.instagram.com/gamasushi702/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="instagram-photo-link"
-        >
-            <div className="instagram-photo ramensoup">
-                <img src={ramensoup} alt="Instagram 2" />
-                <div className="photo-overlay">
-                    <span className="overlay-text">Ramen Soup</span>
-                </div>
-            </div>
-        </a>
-        <a
-            href="https://www.instagram.com/gamasushi702/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="instagram-photo-link"
-        >
-            <div className="instagram-photo chickenkarrage">
-                <img src={chickenkarrage} alt="Instagram 3" />
-                <div className="photo-overlay">
-                    <span className="overlay-text">Chicken Karaage</span>
-                </div>
-            </div>
-        </a>
-        <a
-            href="https://www.instagram.com/gamasushi702/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="instagram-photo-link"
-        >
-            <div className="instagram-photo spicytuna">
-                <img src={spicytuna} alt="Instagram 4" />
-                <div className="photo-overlay">
-                    <span className="overlay-text">Spicy Tuna</span>
-                </div>
-            </div>
-        </a>
-    </div>
-
+                    <h2>Follow us on Instagram</h2>
+                    <div className="instagram-photos-container">
+                        <a
+                            href="https://www.instagram.com/gamasushi702/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="instagram-photo-link"
+                        >
+                            <div className="instagram-photo crabrangoon">
+                                <img src={crabrangoon} alt="Instagram 1" />
+                                <div className="photo-overlay">
+                                    <span className="overlay-text">
+                                        Crab Rangoon
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                        <a
+                            href="https://www.instagram.com/gamasushi702/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="instagram-photo-link"
+                        >
+                            <div className="instagram-photo ramensoup">
+                                <img src={ramensoup} alt="Instagram 2" />
+                                <div className="photo-overlay">
+                                    <span className="overlay-text">
+                                        Ramen Soup
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                        <a
+                            href="https://www.instagram.com/gamasushi702/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="instagram-photo-link"
+                        >
+                            <div className="instagram-photo chickenkarrage">
+                                <img src={chickenkarrage} alt="Instagram 3" />
+                                <div className="photo-overlay">
+                                    <span className="overlay-text">
+                                        Chicken Karaage
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                        <a
+                            href="https://www.instagram.com/gamasushi702/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="instagram-photo-link"
+                        >
+                            <div className="instagram-photo spicytuna">
+                                <img src={spicytuna} alt="Instagram 4" />
+                                <div className="photo-overlay">
+                                    <span className="overlay-text">
+                                        Spicy Tuna
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
                 <div className="location-hours">
                     <h2>Visit Our Location!</h2>
-                    <div
-                        className="google-maps-container"
-                    >
+                    <div className="google-maps-container">
                         <iframe
                             title="Google Maps"
                             width="100%"
@@ -232,7 +237,10 @@ const Home = () => {
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d322253.9445257926!2d-115.27972618023456!3d36.16994120000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80beb782a4f57dd1%3A0x3accd5e6d5b379a3!2sLas%20Vegas%2C%20NV!5e0!3m2!1sen!2sus!4v1646949041557!5m2!1sen!2sus"
                         ></iframe>
                         <div className="centered-paragraph">
-                            <p className="big-text" style={{ fontWeight: 'bold' }}>
+                            <p
+                                className="big-text"
+                                style={{ fontWeight: 'bold' }}
+                            >
                                 123 Main Street, Las Vegas, Nevada, 88901
                             </p>
                         </div>

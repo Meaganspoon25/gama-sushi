@@ -46,17 +46,26 @@ function CreateReview() {
         <div className="row">
             <div className="offset-3 col-6">
                 {token && (
-                <Dropdown className="mr-2 d-flex justify-content-center">
-                    <Dropdown.Toggle variant="black" id="dropdownMenuButton">
-                        Reviews
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                        <Dropdown.Item href={'/reviews/${user_id}'}>My Reviews</Dropdown.Item>
-                        <Dropdown.Item href="/reviews/create">Create a New Review</Dropdown.Item>
-                        <Dropdown.Item href="/reviews">Review List</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
-            )}
+                    <Dropdown className="mr-2 d-flex justify-content-center">
+                        <Dropdown.Toggle
+                            variant="black"
+                            id="dropdownMenuButton"
+                        >
+                            Reviews
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                            <Dropdown.Item href={'/reviews/${user_id}'}>
+                                My Reviews
+                            </Dropdown.Item>
+                            <Dropdown.Item href="/reviews/create">
+                                Create a New Review
+                            </Dropdown.Item>
+                            <Dropdown.Item href="/reviews">
+                                Review List
+                            </Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                )}
                 <div className="shadow p-4 mt-4">
                     <h1>New Review</h1>
                     {successMessage && (
@@ -98,7 +107,7 @@ function CreateReview() {
                                 value={formData.date_submitted}
                                 placeholder="Date Submitted"
                                 required
-                                type="datetime-local"
+                                type="date"
                                 name="date_submitted"
                                 id="date_submitted"
                                 className="form-control"
@@ -117,9 +126,12 @@ function CreateReview() {
                                 name="rating"
                                 id="rating"
                                 className="form-control"
+                                min="1"
+                                max="5" // Limit the rating to a maximum of 5 stars
                             />
                             <label htmlFor="rating">Rating</label>
                         </div>
+
                         <button
                             className="btn btn-primary"
                             onClick={handleSubmit}

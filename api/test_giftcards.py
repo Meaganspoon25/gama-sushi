@@ -22,6 +22,6 @@ class TestGetGiftCard(unittest.TestCase):
         )
         self.assertEqual(response, expected_response)
 
-        
+
 if __name__ == '__main__':
     unittest.main()

@@ -21,8 +21,9 @@ import LogIn from './pages/LogIn.jsx'
 import SignUp from './pages/SignUp.jsx'
 import OrderConfirmation from './pages/OrderConfirmation.jsx'
 import MyReviews from './pages/MyReviews.jsx'
-import ReviewDetail from './pages/ReviewDetail.jsx'
 import OrderHistory from './pages/OrderHistory.jsx'
+import UpdateReview from './pages/UpdateReview.jsx'
+
 
 const router = createBrowserRouter([
     {
@@ -76,24 +77,24 @@ const router = createBrowserRouter([
                 element: <LogIn />,
             },
             {
-                path:'accounts',
+                path: 'accounts',
                 element: <SignUp />,
             },
             {
-                path:'orderconfirmation',
+                path: 'orderconfirmation',
                 element: <OrderConfirmation />,
             },
             {
-                path:'reviews/:user_id/',
-                element:<MyReviews />,
-            },
-            {
-                path: 'review/:review_id',
-                element: <ReviewDetail />,
+                path: 'reviews/:user_id/',
+                element: <MyReviews />,
             },
             {
                 path: 'orders/:user_id',
                 element: <OrderHistory />,
+            },
+            {
+                path: "/update-review/:review_id",
+                element: <UpdateReview />,
             },
         ],
     },

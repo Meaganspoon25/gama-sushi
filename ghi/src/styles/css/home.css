@@ -60,7 +60,6 @@
 .why-choose-us {
   margin-top: 60px;
 }
-
 .why-choose-us h2 {
     font-family: 'Playfair Display', sans-serif;
     text-align: center;
@@ -69,20 +68,47 @@
 }
 
 .why-choose-us-item {
-    background-color: #e6e6e6;
+    background-color: #E6E6E6;
     padding: 15px;
     border-radius: 30px;
     box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
     position: relative;
     transition: transform 0.3s ease;
-    border: 2px solid #726e6e;
+    border: 2px solid #726E6E;
     margin: 10px;
 }
-
 .why-choose-us-item:hover {
     transform: scale(1.1);
     z-index: 1;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+.why-choose-us-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+}
+.why-choose-us h2 {
+    color: #333;
+    font-size: 35px;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', sans-serif;
+}
+.why-choose-us-item p {
+    color: black;
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: 'Playfair Display', sans-serif;
+}
+.follow-us-instagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+.follow-us-instagram h2 {
+  font-family: 'Playfair Display', sans-serif;
+  font-weight: bold;
 }
 
 .why-choose-us-grid {
@@ -131,11 +157,9 @@
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 .instagram-photo {
     position: relative;
 }
-
 .instagram-photo img {
     width: 200px;
     height: 200px;
@@ -144,11 +168,9 @@
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
-
 .instagram-photo:hover img {
     transform: scale(1.1);
 }
-
 .photo-overlay {
     position: absolute;
     top: 0;
@@ -163,46 +185,38 @@
     opacity: 0;
     transition: opacity 0.3s ease;
 }
-
 .instagram-photo:hover .photo-overlay {
     opacity: 1;
 }
-
 .overlay-text {
     color: #fff;
     font-size: 18px;
     font-weight: bold;
 }
-
 .location-hours {
-    background-color: #f2f2f2;
+    background-color: #F2F2F2;
     padding: 20px;
     border-radius: 20px;
     margin-top: 30px;
     margin-bottom: 20px;
     box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.2);
 }
-
 .location-hours h2 {
   text-align: center;
   font-size: 35px;
   font-family: 'Playfair Display', sans-serif;
   font-weight: bold;
 }
-
-
 .google-maps-container iframe {
     width: 100%;
     height: 250px;
 }
-
 .centered-paragraph {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
 }
-
 .big-text {
     font-size: 24px;
     font-family: 'Playfair Display', sans-serif;

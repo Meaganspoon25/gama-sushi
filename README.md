@@ -1,30 +1,21 @@
 # Module3 Project Gamma
-
 ## Gama Sushi
 . Gary San Angelo
 . Aakash Thapa
 . Meagan Weatherspoon
 . Abdullah Raja
-
 Gama Sushi - An exquisite sushi restaurant located in the heart of downtown Las Vegas, Nevada
 Gama Sushi - Known for it's unique sushi creations along with other popular Japanese cuisines
 Gama Sushi - Innovative and authentic
-
-
 ## Design
-
 - API design
 - Data Model
 - GHI
 - Integrations
-
 ## Intended market
-
 - Locals and tourists in downtown Las Vegas
 - Sushi enthusiasts and food lovers
 - Individuals interested in experiencing authentic Japanese cuisine
-
-
 ## Functionality
 ## Authentication
 JWTdown authentication was used for this application to set up an account creation as well as requiring a valid token for logging in and out. docuementation is provided below:
@@ -399,6 +390,7 @@ true
     | Get order by user id | GET | http://localhost:8000/docs#/default/get_order_byuser_orders__user_id__get
     | Checkout order | POST | http://localhost:8000/docs#/default/checkout_order_order_checkout_post
 ```
+5:11
 Creating an order:
 ```
 {
@@ -437,13 +429,11 @@ Return value of checkout:
 ```
 input of tip amount
 ```
-
 - Homepage:
    . Slide show presentation of our sushi dishes
    . Learn about our history, mission, ingedients, and menu
    .  View different photos of some of our dishes which is connected to a link for our instagram page
    . A map with our address information
-
 - Navbar
    . View a list of our menu items
    . Read about our vision and goals for our unique establishment
@@ -451,25 +441,18 @@ input of tip amount
    . View a gallery of our tasty dishes
    . Create a giftcard for someone
    . Signup/Login option for customers
-
 - Footer:
    . Viewers can send us their contact information
    . Restaurant hours list
    . Create/update a review of our restaurant
    . Fill out a form for careers opportunities
    . Subscribe to our newsletter for the latest news and updates
-
 ## User Stories/Scenarios
-
-
 ## Stretch Goals
-
    . Make an order history page
    . Make migration table more detailed for our cart feature
    . More unique designs/layouts
-
 ## Onboarding
-
 - To get started with onboarding our project, we will explain the branching strategy, handling of third-party API keys, setting up your local development environment managing env’s, and integrating with our CI/CD pipeline.
 1) fork the repository and clone locally to your machine by typing this into the terminal:
 Git clone https://gitlab.com/sushify-app/gama-sushi.git
@@ -504,23 +487,14 @@ Add .env to  .gitignore to prevent sensitive data from being committed.
 GitLabGitLab
 Sushify app / Gama-sushi · GitLab
 GitLab.com
-
-
 ## Tech Stack
-
    . React
    . FastAPI
    . PostgreSQL
    . Docker
-
-
 ## Documentation
 ![alt text](<DesignImage/Excalidraw-Wireframe (1).png>)
-
-
 ## Issue Tracking
-
-
 ## Unit Tests
 This section goes over the unit testing we performed to ensure our backend endpoints will work as attended.
 Abdullah ensured the newsletter was working as intended when submitting an email, Meagan verified we were able to retrieve a list of giftcards,

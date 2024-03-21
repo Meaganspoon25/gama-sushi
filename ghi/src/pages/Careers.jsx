@@ -1,58 +1,54 @@
-import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Careers from '../images/careers.jpeg';
+import React, { useState } from 'react'
+import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
+import Careers from '../images/careers.jpeg'
 
-const API_HOST = import.meta.env.VITE_API_HOST;
+const API_HOST = import.meta.env.VITE_API_HOST
 
 const CareerForm = () => {
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [email, setEmail] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
-    const [resume, setResume] = useState('');
-    const [submitSuccess, setSubmitSuccess] = useState(false);
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
+    const [email, setEmail] = useState('')
+    const [phoneNumber, setPhoneNumber] = useState('')
+    const [resume, setResume] = useState(null)
+    const [submitSuccess, setSubmitSuccess] = useState(false)
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        e.preventDefault()
         try {
-            const requestData = {
-                first_name: firstName,
-                last_name: lastName,
-                email: email,
-                phone_number: phoneNumber,
-                resume: resume
-            };
+            const formData = new FormData()
+            formData.append('first_name', firstName)
+            formData.append('last_name', lastName)
+            formData.append('email', email)
+            formData.append('phone_number', phoneNumber)
+            formData.append('resume', resume)
 
-            const url = `${API_HOST}/careers`;
+            const url = `${API_HOST}/careers`
             const response = await fetch(url, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(requestData)
-            });
+                body: formData,
+            })
 
             if (response.ok) {
-                const data = await response.json();
-                console.log('Career form submitted:', data);
-                setSubmitSuccess(true);
-                clearForm();
+                const data = await response.json()
+                console.log('Career form submitted:', data)
+                setSubmitSuccess(true)
+                clearForm()
             } else {
-                console.error('Failed to submit career form:', response.status);
+                console.error('Failed to submit career form:', response.status)
             }
         } catch (error) {
-            console.error('Error submitting career form:', error);
+            console.error('Error submitting career form:', error)
         }
-    };
+    }
 
     const clearForm = () => {
-        setFirstName('');
-        setLastName('');
-        setEmail('');
-        setPhoneNumber('');
-        setResume('');
-    };
+        setFirstName('')
+        setLastName('')
+        setEmail('')
+        setPhoneNumber('')
+        setResume(null)
+    }
 
     return (
         <div
@@ -147,20 +143,18 @@ const CareerForm = () => {
                                             </label>
                                         </div>
                                         <div className="form-floating mb-3">
-                                            <input
-                                                placeholder="Resume"
-                                                required
-                                                type="text"
+                                            <Form.Label htmlFor="resume">
+                                                <b>Upload Resume</b>
+                                            </Form.Label>
+                                            <Form.Control
+                                                type="file"
                                                 name="resume"
-                                                className="form-control"
-                                                value={resume}
+                                                id="resume"
+                                                encType="multipart/form-data"
                                                 onChange={(e) =>
-                                                    setResume(e.target.value)
+                                                    setResume(e.target.files[0])
                                                 }
                                             />
-                                            <label htmlFor="resume">
-                                                <b>Resume</b>
-                                            </label>
                                         </div>
                                         <Button variant="primary" type="submit">
                                             Submit
@@ -174,6 +168,6 @@ const CareerForm = () => {
             </div>
         </div>
     )
-};
+}
 
-export default CareerForm;
+export default CareerForm
