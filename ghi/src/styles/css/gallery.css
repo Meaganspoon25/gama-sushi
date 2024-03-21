@@ -1,0 +1,17 @@
+.small-image {
+    width: 85%;
+    height: 85%;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.gallery-image {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 3px;
+    background-color: #fff
+    padding: 5px;
+}
