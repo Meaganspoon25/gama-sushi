@@ -52,7 +52,7 @@ const MyReviews = () => {
         }
     }
     const handleUpdate = (reviewId) => {
-        navigate(`/review/${reviewId}`)
+        navigate(`/update-review/${reviewId}`)
     }
     return (
         <div className="container">

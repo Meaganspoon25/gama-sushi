@@ -1,5 +1,6 @@
 from pydantic import BaseModel, EmailStr
 from queries.pool import pool
+from fastapi import UploadFile
 
 
 class CareersFormIn(BaseModel):
@@ -7,7 +8,7 @@ class CareersFormIn(BaseModel):
     last_name: str
     email: EmailStr
     phone_number: int
-    resume: str
+    resume: UploadFile
 
 
 class CareersFormOut(BaseModel):
