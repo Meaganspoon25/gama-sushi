@@ -22,7 +22,7 @@ Gama Sushi is tailored for sushi enthusiasts and foodies who value authentic Jap
   ```
 Backend Endpoints
 ```
-      Utilizing RESTful APIs, we facilitated CRUD operations for our cart,reviews,accounts,careers,gallery,giftcards, and news letter. backend endpoints through our frontend components using react.
+      Utilizing RESTful APIs, we facilitated CRUD operations for our cart, reviews, accounts, careers, gallery, gift cards, and newsletter backend endpoints through our frontend components using React.
 ```
  example of classes/models/attributes and how its used in FastAPI (This model is for our cart)
  ```
@@ -464,9 +464,8 @@ Handling invalid career form data
     And the system returns an error response indicating the missing or invalid fields
 
 ## Stretch Goals
-    . Make an order history page
-    . Make migration table more detailed for our cart feature
-    . More unique designs/layouts
+    For our stretch goals, we aim to implement an order history page, enhance the migration table for our cart feature with more detailed information, explore more unique designs and layouts for our platform, and enable users to upload PDF files for their resumes.
+
 ## Onboarding
     - To get started with onboarding our project, we will explain the branching strategy, handling of third-party API keys, setting up your local development environment managing env’s, and integrating with our CI/CD pipeline.
     1) fork the repository and clone locally to your machine by typing this into the terminal:
