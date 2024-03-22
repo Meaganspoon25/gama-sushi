@@ -508,7 +508,7 @@ Handling invalid career form data
     . PostgreSQL
     . Docker
 ## Documentation
-![alt text](<DesignImage/Excalidraw-Wireframe (1).png>)
+![IMAGE_DESCRIPTION](https://gitlab.com/sushify-app/gama-sushi/-/blob/main/docs/Excalidraw-Wireframe__1_.png?ref_type=heads)
 ## Issue Tracking
 ## Unit Tests
     This section goes over the unit testing we performed to ensure our backend endpoints will work as attended.
