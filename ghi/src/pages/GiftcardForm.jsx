@@ -17,6 +17,10 @@ const GiftcardForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            if (!token) {
+                alert('Please login to send the giftcard.')
+                return
+            }
             const url = `${API_HOST}/giftcards`;
             const response = await fetch(url, {
                 method: 'POST',

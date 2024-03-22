@@ -3,6 +3,7 @@ import '../../styles/css/footer.css'
 import { Link } from 'react-router-dom'
 import logo from '../../images/logo.png'
 import instagram from '../../images/instagram-logo.png'
+
 const API_HOST = import.meta.env.VITE_API_HOST
 
 const Footer = () => {
@@ -87,7 +88,11 @@ const Footer = () => {
 
                 <div className="d-flex flex-column flex-sm-row justify-content-center py-4 my-4 border-top">
                     <div className="mt-2">
-                        <a href="https://www.instagram.com/gamasushi702/">
+                        <a
+                            href="https://www.instagram.com/gamasushi702/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             <img
                                 src={instagram}
                                 alt="Instagram"
@@ -95,7 +100,7 @@ const Footer = () => {
                             />
                         </a>
                     </div>
-                    <p>© 2024 Gama Sushi, Inc. All rights reserved.</p>
+                <p>© 2024 Gama Sushi, Inc. All rights reserved.</p>
                 </div>
             </footer>
         </div>

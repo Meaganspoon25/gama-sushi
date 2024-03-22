@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import useToken from '@galvanize-inc/jwtdown-for-react'
-
+import '../styles/css/updatereview.css'
 const API_HOST = import.meta.env.VITE_API_HOST
 
 const UpdateReview = () => {
@@ -82,7 +82,7 @@ const UpdateReview = () => {
 
     return (
         <div className="row">
-            <div className="offset-3 col-6">
+            <div className="offset-3 col-6 mb-2">
                 <div className="shadow p-4 mt-4">
                     <h1>Update Review</h1>
                     {successMessage && (
