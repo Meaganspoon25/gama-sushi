@@ -508,8 +508,9 @@ Handling invalid career form data
     . PostgreSQL
     . Docker
 ## Documentation
-![IMAGE_DESCRIPTION](https://gitlab.com/sushify-app/gama-sushi/-/blob/main/docs/Excalidraw-Wireframe__1_.png?ref_type=heads)
-## Issue Tracking
+![Alt text](https://gitlab.com/sushify-app/gama-sushi/-/blob/main/docs/Excalidraw-Wireframe__1_.png?ref_type=heads)
+
+
 ## Unit Tests
     This section goes over the unit testing we performed to ensure our backend endpoints will work as attended.
     These unit test not only verifies the basic functionality of the POST method but also includes extensive coverage for various scenarios and edge cases. These include testing with invalid and missing input data, boundary conditions such as maximum and minimum field values and error handling. All tests are located in the API directory as loose files starting with "test".
