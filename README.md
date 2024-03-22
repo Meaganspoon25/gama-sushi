@@ -5,13 +5,13 @@ Team:
 * Gary San Angelo
 * Meagan Weatherspoon
 * Abdullah Raja
-* Aakash Thapa 
+* Aakash Thapa
 
 ## Design
 Gama Sushi is a sophisticated restaurant management platform that streamline operations and enhance the customer experience. Developed using React for the frontend and FastAPI for the backend API, along with Postgres for the database, Gama Sushi offers a comprehensive solution for users to access the menu and order food items.
 
 ## Intended market
-Gama Sushi is tailored for sushi enthusiasts and foodies who value authentic Japanese cuisine and a cozy dining experience. Our target demographic includes individuals seeking high-quality sushi made from fresh, locally sourced ingredients. 
+Gama Sushi is tailored for sushi enthusiasts and foodies who value authentic Japanese cuisine and a cozy dining experience. Our target demographic includes individuals seeking high-quality sushi made from fresh, locally sourced ingredients.
 
 ## Functionality
 ```
@@ -507,9 +507,7 @@ Handling invalid career form data
     . FastAPI
     . PostgreSQL
     . Docker
-## Documentation
-![IMAGE_DESCRIPTION](https://gitlab.com/sushify-app/gama-sushi/-/blob/main/docs/Excalidraw-Wireframe__1_.png?ref_type=heads)
-## Issue Tracking
+
 ## Unit Tests
     This section goes over the unit testing we performed to ensure our backend endpoints will work as attended.
     These unit test not only verifies the basic functionality of the POST method but also includes extensive coverage for various scenarios and edge cases. These include testing with invalid and missing input data, boundary conditions such as maximum and minimum field values and error handling. All tests are located in the API directory as loose files starting with "test".
