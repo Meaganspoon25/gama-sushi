@@ -58,8 +58,13 @@ const PlaceOrder = () => {
 
     const API_HOST = import.meta.env.VITE_API_HOST
 
-    const addToCart = async (category, item_name, item_price, item_image) => {
+    const addToCart = async (category, item_name, item_price) => {
         try {
+            if (!token) {
+                alert('Please login to add items to the cart.')
+                return
+            }
+
             const response = await fetch(`${API_HOST}/orders`, {
                 method: 'POST',
                 headers: {
@@ -70,37 +75,59 @@ const PlaceOrder = () => {
                     item_name,
                     item_price,
                     item_quantity: 1,
-                    item_image,
                 }),
             })
 
             if (!response.ok) {
-                throw new Error(
-                    `Failed to add item to cart: ${response.status} - ${response.statusText}`
-                )
+                throw new Error('Failed to add item to cart')
             }
 
             const jsonResponse = await response.json()
             console.log('Response JSON:', jsonResponse)
 
-            // Update the cart state with the response item
-            const updatedCart = [
-                ...cart,
-                {
-                    order_id: jsonResponse.id,
+            const id = jsonResponse.id // Assuming the response includes the order ID
+            console.log('Extracted id:', id)
+
+            // Define updatedCart outside the try block
+            let updatedCart = [...cart]
+
+            // Check if the item already exists in the cart
+            const existingItemIndex = cart.findIndex(
+                (cartItem) => cartItem.item === item_name
+            )
+
+            if (existingItemIndex !== -1) {
+                // If the item exists, update its quantity
+                updatedCart = cart.map((cartItem, index) => {
+                    if (index === existingItemIndex) {
+                        return {
+                            ...cartItem,
+                            quantity: cartItem.quantity + 1,
+                        }
+                    }
+                    return cartItem
+                })
+            } else {
+                // If the item does not exist, add it to the cart
+                updatedCart.push({
+                    order_id: id,
                     category,
                     item: item_name,
                     price: item_price,
                     quantity: 1,
-                },
-            ]
+                })
+            }
 
             setCart(updatedCart)
             console.log('Updated state:', updatedCart)
         } catch (error) {
-            console.error('Error adding item to cart:', error.message)
+            console.error('Error adding item to cart:', error)
         }
     }
+
+
+
+
 
     const removeFromCart = async (order_id) => {
         try {

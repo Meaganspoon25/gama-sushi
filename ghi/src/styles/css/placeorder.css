@@ -18,12 +18,14 @@
 .menu-items h2 {
     margin-bottom: 10px;
     color: red;
+    font-size: 1rem;
 }
 
 .menu-items h6 {
     margin-bottom: 20px; /* Adjust the margin as needed */
     text-align: left; /* Center the text */
     grid-column: 1 / span 2; /* Span the full width of the grid */
+    font-size: 1rem;
 }
 
 .menu-items h2, .cart h2 {

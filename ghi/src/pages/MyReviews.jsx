@@ -85,6 +85,9 @@ const MyReviews = () => {
                 </div>
             </div>
             <div className="review-list-container">
+                {token && reviews.length === 0 && (
+                    <p>Please leave us a review!</p>
+                )}
                 {reviews.map((review, index) => (
                     <div key={index} className="review-item">
                         <h3>Review: {review.review}</h3>

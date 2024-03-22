@@ -10,25 +10,32 @@ const CareerForm = () => {
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [phoneNumber, setPhoneNumber] = useState('')
-    const [resume, setResume] = useState(null)
+    const [resume, setResume] = useState('') // Changed null to empty string
     const [submitSuccess, setSubmitSuccess] = useState(false)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const formData = new FormData()
-            formData.append('first_name', firstName)
-            formData.append('last_name', lastName)
-            formData.append('email', email)
-            formData.append('phone_number', phoneNumber)
-            formData.append('resume', resume)
+            
 
-            const url = `${API_HOST}/careers`
-            const response = await fetch(url, {
-                method: 'POST',
-                body: formData,
-            })
+             const requestData = {
+                 first_name: firstName,
+                 last_name: lastName,
+                 email: email,
+                 phone_number: phoneNumber,
+                 resume: resume,
+             }
 
+             const url = `${API_HOST}/careers`
+             const response = await fetch(url, {
+                 method: 'POST',
+                 headers: {
+                     'Content-Type': 'application/json',
+                 },
+                 body: JSON.stringify(requestData),
+             })
+
+         
             if (response.ok) {
                 const data = await response.json()
                 console.log('Career form submitted:', data)
@@ -47,7 +54,7 @@ const CareerForm = () => {
         setLastName('')
         setEmail('')
         setPhoneNumber('')
-        setResume(null)
+        setResume('') 
     }
 
     return (
@@ -128,7 +135,7 @@ const CareerForm = () => {
                                             <input
                                                 placeholder="Phone Number"
                                                 required
-                                                type="tel"
+                                                type="text"
                                                 name="phone_number"
                                                 className="form-control"
                                                 value={phoneNumber}
@@ -143,19 +150,22 @@ const CareerForm = () => {
                                             </label>
                                         </div>
                                         <div className="form-floating mb-3">
-                                            <Form.Label htmlFor="resume">
-                                                <b>Upload Resume</b>
-                                            </Form.Label>
-                                            <Form.Control
-                                                type="file"
+                                            <label htmlFor="resume">
+                                                <b>LinkedIn Url</b>
+                                            </label>
+                                            <input
+                                                placeholder="LinkedIn Url"
+                                                type="text"
                                                 name="resume"
                                                 id="resume"
-                                                encType="multipart/form-data"
+                                                className="form-control"
+                                                value={resume}
                                                 onChange={(e) =>
-                                                    setResume(e.target.files[0])
+                                                    setResume(e.target.value)
                                                 }
                                             />
                                         </div>
+
                                         <Button variant="primary" type="submit">
                                             Submit
                                         </Button>

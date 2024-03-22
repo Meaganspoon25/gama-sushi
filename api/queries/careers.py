@@ -1,22 +1,21 @@
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel
 from queries.pool import pool
-from fastapi import UploadFile
 
 
 class CareersFormIn(BaseModel):
     first_name: str
     last_name: str
-    email: EmailStr
-    phone_number: int
-    resume: UploadFile
+    email: str
+    phone_number: str
+    resume: str
 
 
 class CareersFormOut(BaseModel):
     id: int
     first_name: str
     last_name: str
-    email: EmailStr
-    phone_number: int
+    email: str
+    phone_number: str
     resume: str
 
 

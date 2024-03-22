@@ -21,7 +21,6 @@ import LogIn from './pages/LogIn.jsx'
 import SignUp from './pages/SignUp.jsx'
 import OrderConfirmation from './pages/OrderConfirmation.jsx'
 import MyReviews from './pages/MyReviews.jsx'
-import OrderHistory from './pages/OrderHistory.jsx'
 import UpdateReview from './pages/UpdateReview.jsx'
 
 
@@ -87,10 +86,6 @@ const router = createBrowserRouter([
             {
                 path: 'reviews/:user_id/',
                 element: <MyReviews />,
-            },
-            {
-                path: 'orders/:user_id',
-                element: <OrderHistory />,
             },
             {
                 path: "/update-review/:review_id",

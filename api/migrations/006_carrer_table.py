@@ -8,7 +8,7 @@ steps = [
             last_name VARCHAR(50) NOT NULL,
             email VARCHAR(50) NOT NULL,
             phone_number VARCHAR(50) NOT NULL,
-            resume BYTEA NOT NULL
+            resume VARCHAR(500) NOT NULL
         );
         """,
         # "Down" SQL statement

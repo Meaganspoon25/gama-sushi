@@ -10,12 +10,14 @@ const ReviewList = () => {
     const params = useParams()
     const navigate = useNavigate()
     const [reviews, setReviews] = useState([])
+    const [loading, setLoading] = useState(true)
     useEffect(() => {
         const fetchReviews = async () => {
             const url = `${API_HOST}/reviews`
             const result = await fetch(url)
             const data = await result.json()
             setReviews(data)
+            setLoading(false)
         }
         fetchReviews()
     }, [])
@@ -64,20 +66,29 @@ const ReviewList = () => {
             <div className="row">
                 <div className="col">
                     <div className="review-list-container">
-                        {reviews.map((review, index) => (
-                            <div key={index} className="review-item">
-                                <h3>Review: {review.review}</h3>
-                                <p>
-                                    Recommendation:{' '}
-                                    {review.recommendation ? 'Yes' : 'No'}
-                                </p>
-                                <p>Date Submitted: {review.date_submitted}</p>
-                                <p>
-                                    Rating:{' '}
-                                    <StarRating rating={review.rating} />
-                                </p>
-                            </div>
-                        ))}
+                        {!token && <p>Please sign up to create reviews.</p>}
+                        {token && reviews.length === 0 && (
+                            <p>
+                                No reviews right now. Please leave us a review!
+                            </p>
+                        )}
+                        {!loading &&
+                            reviews.map((review, index) => (
+                                <div key={index} className="review-item">
+                                    <h3>Review: {review.review}</h3>
+                                    <p>
+                                        Recommendation:{' '}
+                                        {review.recommendation ? 'Yes' : 'No'}
+                                    </p>
+                                    <p>
+                                        Date Submitted: {review.date_submitted}
+                                    </p>
+                                    <p>
+                                        Rating:{' '}
+                                        <StarRating rating={review.rating} />
+                                    </p>
+                                </div>
+                            ))}
                     </div>
                 </div>
             </div>

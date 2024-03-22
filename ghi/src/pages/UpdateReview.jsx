@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import useToken from '@galvanize-inc/jwtdown-for-react'
-import { Dropdown } from 'react-bootstrap'
 
 const API_HOST = import.meta.env.VITE_API_HOST
 

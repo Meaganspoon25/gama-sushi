@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import useToken from '@galvanize-inc/jwtdown-for-react'
 import { Dropdown } from 'react-bootstrap';
+
 const API_HOST = import.meta.env.VITE_API_HOST
 function CreateReview() {
     const [formData, setFormData] = useState({
@@ -66,7 +67,7 @@ function CreateReview() {
                         </Dropdown.Menu>
                     </Dropdown>
                 )}
-                <div className="shadow p-4 mt-4">
+                <div className="shadow p-4 mt-4 mb-5">
                     <h1>New Review</h1>
                     {successMessage && (
                         <p style={{ color: 'green' }}>{successMessage}</p>
